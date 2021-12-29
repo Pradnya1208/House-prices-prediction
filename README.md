@@ -131,3 +131,26 @@ I have included Data visualizatio  for some these variables, for complete analys
 > ![sold](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/yearsold.PNG?raw=true)
 
 ### 2. Continuous Variables:
+Here we are going to analyze correlation of each feature with SalePrice, see skewness for linear and boxcox transformations and apply the better one. If skewness continues high, we will bin the variable into categories or flag (0 and 1). And if there are missing values, we will drop the column.
+
+#### Linear feet of street connected to property:
+> ![Loft frontage](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/Loft_continuous.PNG?raw=true)
+
+#### Area of Lot:
+> ![Lot](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/lot_cont.PNG?raw=true)
+
+#### Masonry veneer area in square feet:
+> ![veneer](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/veneer_cont.PNG?raw=true)
+
+#### Basement:
+> ![base](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/basement.PNG?raw=true)
+
+Transforming this feature into categories
+> ![Category](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/basement_categorical.PNG?raw=true)
+> ![corr](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/basement_after-categorical.PNG?raw=true)
+since there is no correlation, we can flag this feature.
+> ![flagged](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/flagged.PNG?raw=true)
+
+We have transformed several continuous features in the same way, for more details have a look at the [Notebook](https://github.com/Pradnya1208/House-prices-prediction/blob/main/House%20prices%20prediction.ipynb)
+
+### 3.Ordinal Varibles:
