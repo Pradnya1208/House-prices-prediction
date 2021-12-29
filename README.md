@@ -1,7 +1,7 @@
 
 # <div align="center">House Price prediction</div>
 <div align="center">
-  <img src = "https://media.giphy.com/media/UqqVRaP8y4uo1GNxbN/giphy.gif" width="65%">
+  <img src = "https://raw.githubusercontent.com/Pradnya1208/House-prices-prediction/main/output/house.webp" width="65%">
 </div>
 
 ## Objectives:
