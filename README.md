@@ -1,3 +1,11 @@
+
+
+# <div align="center">House Price prediction</div>
+<div align="center">
+  <img src = "https://raw.githubusercontent.com/Pradnya1208/House-prices-prediction/main/output/house.webp" width="65%">
+</div>
+
+
 <div align="center">
   
 [1]: https://github.com/Pradnya1208
@@ -12,12 +20,6 @@
 [![twitter](https://raw.githubusercontent.com/Pradnya1208/Telecom-Customer-Churn-prediction/c9f9c5dc4e24eff0143b3056708d24650cbccdde/icons/iconmonstr-twitter-5.svg)][4]
 
 </div>
-
-# <div align="center">House Price prediction</div>
-<div align="center">
-  <img src = "https://raw.githubusercontent.com/Pradnya1208/House-prices-prediction/main/output/house.webp" width="65%">
-</div>
-
 ## Objectives:
 Predict sales prices and practice feature engineering, RFs, and gradient boosting
 ## Dataset:
