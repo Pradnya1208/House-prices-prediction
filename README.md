@@ -92,4 +92,6 @@ The Dataset has With 79 explanatory variables describing (almost) every aspect o
 - **SaleType**: Type of sale
 - **SaleCondition**: Condition of sale
 
+**Libraries:** `sklearn` `Matplotlib` `pandas` `seaborn` `NumPy` `Scipy` `XGBoost`
+
 
