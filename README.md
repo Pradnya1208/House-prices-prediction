@@ -180,9 +180,6 @@ Here, we will analyze correlation with the boxplots and missing values. Clusteri
 #### Roof Style:
 > ![roof](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/roof.PNG?raw=true)
 
-#### Type of Foundation:
-> ![foundation](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/Foundation.PNG?raw=true)
-
 ## Model Training and Evaluation:
 In this section, we are going to get dummies for categorical variables, split train and test sets, analyze skewness if yet present for both sets, scale the data (Robust is better for outliers) and, finally, train the model for
 * Lasso
@@ -201,9 +198,146 @@ before training the model we have done following steps
 **Lasso**
 ```
 lasso = Lasso(alpha= 0.0005)
-
 ```
 
 **Elastic Net**
 ```
 elastic = ElasticNet(alpha=0.0005, l1_ratio=.9)
+```
+
+**Kernel Ridge**
+```
+k_ridge = KernelRidge(alpha=0.1, coef0=2.5, degree=3, gamma=None, kernel='polynomial',kernel_params=None)
+```
+
+**Gradient Boost**
+```
+g_boost = GradientBoostingRegressor(alpha=0.9, criterion='friedman_mse',
+                          init=None, learning_rate=0.01, loss='huber',
+                          max_depth=3, max_features=18, max_leaf_nodes=None,
+                          min_impurity_decrease=0.0, min_impurity_split=None,
+                          min_samples_leaf=3, min_samples_split=5,
+                          min_weight_fraction_leaf=0.0, n_estimators=3300,
+                          n_iter_no_change=None,random_state=None, subsample=1.0, tol=0.0001,
+                          validation_fraction=0.1, verbose=0, warm_start=False)
+```
+
+**XGBoost**
+```
+xg_boost = XGBRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+             colsample_bynode=1, colsample_bytree=1, gamma=0,
+             importance_type='gain', learning_rate=0.01, max_delta_step=0,
+             max_depth=4, min_child_weight=1, missing=None, n_estimators=3300,
+             n_jobs=1, nthread=None, objective='reg:linear', random_state=0,
+             reg_alpha=0, reg_lambda=1, scale_pos_weight=1, seed=None,
+             silent=None, subsample=0.3, verbosity=1)
+```
+**Light GBM**
+```
+lgbm = LGBMRegressor(bagging_fraction=0.6, bagging_freq=9, bagging_seed=14,
+              boosting_type='gbdt', class_weight=None, colsample_bytree=0,
+              feature_fraction=0.1, feature_fraction_seed=1,
+              importance_type='split', learning_rate=0.01, max_bin=65,
+              max_depth=4, min_child_samples=20, min_child_weight=0.001,
+              min_data_in_leaf=5, min_split_gain=0.0, min_sum_hessian_in_leaf=5,
+              n_estimators=3300, n_jobs=-1, num_leaves=7,
+              objective='regression', random_state=None, reg_alpha=0.2,
+              reg_lambda=0.1, silent=True, subsample=1.0,
+              subsample_for_bin=200000, subsample_freq=0)
+```
+
+**Stacking**
+![Stacking](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/stacking.PNG?raw=true)
+
+```
+stacking = StackingRegressor(regressors=(elastic, g_boost, k_ridge),
+                             meta_regressor = lasso)
+
+param_grid = {} 
+
+stack = GridSearchCV(stacking, 
+                   param_grid = param_grid,
+                   cv = 10, 
+                   scoring = "neg_mean_squared_error",
+                   n_jobs = 5, 
+                   verbose = 1)
+
+stack.fit(X_train,Y_train)
+```
+```
+best score: -0.01181972103207294
+```
+
+**Voting Regressor**
+A voting regressor is an ensemble meta-estimator that fits base regressors each on the whole dataset. It, then, averages the individual predictions to form a final prediction.
+
+```
+voting = VotingRegressor(estimators=[('xgboost', xg_boost), 
+                                     ('lgbm', lgbm),
+                                     ('stacking', stacking)])
+
+v_param_grid = {} # tuning voting parameter
+
+gsV = GridSearchCV(voting, 
+                   param_grid = v_param_grid,
+                   cv = 10, 
+                   scoring = "neg_mean_squared_error",
+                   n_jobs = 5, 
+                   verbose = 1)
+
+gsV.fit(X_train,Y_train)
+```
+```
+best score:-0.011459485092086497
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Optimizations
+
+For Hyperparameter Tuning we've used GridSearchSCv.
+
+### Lessons Learned
+
+`Data Imputation`
+`Handling Outliers`
+`Feature Engineering`
+`Advanced regression techniques`
+`Stacking`
+`Voting`
+
+### References:
+
+- [Voting Regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingRegressor.html)
+- [Stacking](http://rasbt.github.io/mlxtend/user_guide/regressor/StackingRegressor/)
+- [LightGBM](https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.LGBMRegressor.html#lightgbm.LGBMRegressor)
+- [XGBoost](https://dask-ml.readthedocs.io/en/stable/modules/generated/dask_ml.xgboost.XGBRegressor.html)
+- [Gradient Boosting](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+- [Kernel Ridge](https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html)
+- [Elastic Net](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html)
+- [Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html)
+- [Scaling](http://benalexkeen.com/feature-scaling-with-scikit-learn/)
+
+### Feedback
+
+If you have any feedback, please reach out at pradnyapatil671@gmail.com
+
+
+### 🚀 About Me
+#### Hi, I'm Pradnya! 👋
+I am an AI Enthusiast and  Data science & ML practitioner
