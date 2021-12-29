@@ -103,34 +103,31 @@ The Dataset has With 79 explanatory variables describing (almost) every aspect o
 Here, we have analyzed each discrete variable individually and make decisions based on correlation with SalePrice.<br>
 I have included Data visualizatio  for some these variables, for complete analysis hace alook at : [Notebook](https://github.com/Pradnya1208/House-prices-prediction/blob/main/House%20prices%20prediction.ipynb)
 
-**Number of Bathrooms**
+#### Number of Bathrooms
 > ![Barhs](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/baths.PNG?raw=true)
 
-**Bedrooms above grade**
+#### Bedrooms above grade
 > ![Bedrooms](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/bedrooms.PNG?raw=true)
 
-**Kitches above grade**
-> ![Kitches](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/kitchen.PNG?raw=true)
+#### Kitchen above grade
+> ![Kitchen](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/kitchen.PNG?raw=true)
 
-**Toatal Rooms**
+#### Toatal Rooms
 > ![Rooms](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/totalrooms.PNG?raw=true)
 
-**Fire Places**
+#### Fire Places
 > ![Fireplace](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/Fireplaces.PNG?raw=true)
 
-**Size of Garage in Car Capacity**
+#### Size of Garage in Car Capacity
 > ![Garage](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/gragesize.PNG?raw=true)
 
-**Remodel Date**
+#### Remodel Date
 > ![Remodelling](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/remodellingyear.PNG?raw=true)
 
-**Original Construction Date**
+#### Original Construction Date
 > ![construction](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/yearbuilt.PNG?raw=true)
 
-**Year Sold**
+#### Year Sold
 > ![sold](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/yearsold.PNG?raw=true)
 
 ### 2. Continuous Variables:
-
-
-
