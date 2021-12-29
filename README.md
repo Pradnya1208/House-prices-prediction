@@ -154,3 +154,56 @@ since there is no correlation, we can flag this feature.
 We have transformed several continuous features in the same way, for more details have a look at the [Notebook](https://github.com/Pradnya1208/House-prices-prediction/blob/main/House%20prices%20prediction.ipynb)
 
 ### 3.Ordinal Varibles:
+Here, we will first change the strings by integers, because the variables are ordinal, we can't get dummies unless the correlation with SalePrice is very low. Correlation, missing values are taken into consideration.
+
+#### Shape of the Property:
+> ![Lot](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/lotshape_ordinal.PNG?raw=true)
+
+#### Type of utilities available:
+> ![Utilities](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/utility_type.PNG?raw=true)
+
+#### Slope of Property:
+> ![slope](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/property_slope.PNG?raw=true)
+
+#### If Central air conditioning is present.:
+> ![AC](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/central%20AC_ordinal.PNG?raw=true)
+
+#### Electrical System:
+> ![Electrical](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/electrical_system_ordinal.PNG?raw=true)
+
+### 4. Nominal Variales:
+Here, we will analyze correlation with the boxplots and missing values. Clustering information when necessary from categories, decisions will be made to drop, flag or keep the column.
+
+#### Road Access:
+> ![road access](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/road_access_ordinal.PNG?raw=true)
+
+#### Roof Style:
+> ![roof](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/roof.PNG?raw=true)
+
+#### Type of Foundation:
+> ![foundation](https://github.com/Pradnya1208/House-prices-prediction/blob/main/output/Foundation.PNG?raw=true)
+
+## Model Training and Evaluation:
+In this section, we are going to get dummies for categorical variables, split train and test sets, analyze skewness if yet present for both sets, scale the data (Robust is better for outliers) and, finally, train the model for
+* Lasso
+* ElasticNet
+* Kernel Ridge
+* Gradient Boosting Regressor
+* XGBoost
+* Light Gradient Boosting
+
+We've obtained the tuning parameters from GridSearchCV
+before training the model we have done following steps
+- Analyzing skewness and replacing column with the Boxcox transformation
+- Scaling with RobustScaler
+- We've used log transformation for Target variable
+
+```
+**Lasso**
+lasso = Lasso(alpha= 0.0005)
+
+```
+
+```
+**Elastic Net**
+elastic = ElasticNet(alpha=0.0005, l1_ratio=.9)
