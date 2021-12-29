@@ -198,12 +198,12 @@ before training the model we have done following steps
 - Scaling with RobustScaler
 - We've used log transformation for Target variable
 
-```
 **Lasso**
+```
 lasso = Lasso(alpha= 0.0005)
 
 ```
 
-```
 **Elastic Net**
+```
 elastic = ElasticNet(alpha=0.0005, l1_ratio=.9)
