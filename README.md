@@ -292,25 +292,9 @@ best score:-0.011459485092086497
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Optimizations
 
-For Hyperparameter Tuning we've used GridSearchSCv.
+For Hyperparameter Tuning we've used GridSearchCv.
 
 ### Lessons Learned
 
