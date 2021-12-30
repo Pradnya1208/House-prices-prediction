@@ -20,10 +20,11 @@
 [![twitter](https://raw.githubusercontent.com/Pradnya1208/Telecom-Customer-Churn-prediction/c9f9c5dc4e24eff0143b3056708d24650cbccdde/icons/iconmonstr-twitter-5.svg)][4]
 
 </div>
+
 ## Objectives:
 Predict sales prices and practice feature engineering, RFs, and gradient boosting
 ## Dataset:
- [House Prices - Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
+[House Prices - Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
 ### Data Fields:
 The Dataset has With 79 explanatory variables describing (almost) every aspect of residential homes in Ames and Iowa.
